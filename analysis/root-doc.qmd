@@ -1,0 +1,17 @@
+---
+title: "eds221-day1-comp1"
+format: html
+editor: visual
+execute: 
+  warning: false
+---
+
+```{r}
+energy_2 <- read_csv("../data/us_energy.csv")
+# .. is saying to go back one level
+#we are currently in analysis path. we went back to global directory, then went to data, then can use us_energy
+#even if we change the location of the file, if we click on the rprog on our computer, it will still open since we have our working directory set to that folder
+```
+
+
+
