@@ -2,6 +2,35 @@
 title: "eds221-day1-comp1"
 format: html
 editor: visual
+execute: 
+  warning: false
 ---
 
-change
+```{r}
+library(tidyverse)
+```
+
+# Read in data
+```{r}
+energy <- read_csv("data/us_energy.csv")
+#this is just in the overall working directory. we need to let it know that we want it to look in the data folder in our working directory
+```
+
+# Create a line chart of energy over time, with color based on the energy type.
+```{r}
+energy_linechart <- ggplot(data = energy, aes(x = year, y = quadrillion_btu)) + 
+  geom_line(aes(color = type)) + 
+  geom_point(aes(color = type)) + 
+  labs(x = "Time (year)", y = "Energy output (btu)", title = "energy output over the years")
+energy_linechart
+#if you do not specify what data you want, all of the geom will pull data from the first ggplot data
+#everything in ggplot is like a global selection
+#if you wanted to add other stuff, you would have to specify what data you want it to come from
+#basically: ggplot is umbrella, geom is the strings coming out of the umbrella
+```
+
+
+
+
+
+
